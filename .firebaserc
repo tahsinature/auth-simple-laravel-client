@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "e-commarce": "auth-simple-laravel",
+    "default": "auth-simple-laravel"
+  }
+}
