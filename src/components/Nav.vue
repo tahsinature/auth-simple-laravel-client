@@ -24,6 +24,9 @@
           <li class="nav-item" v-if="!$store.getters.getAdmin">
             <router-link class="nav-link" to="/register">Register</router-link>
           </li>
+          <li class="nav-item" v-if="!$store.getters.getAdmin">
+            <router-link class="nav-link" to="/about">About this App</router-link>
+          </li>
           <li class="nav-item dropdown" v-if="$store.getters.getAdmin">
             <a
               class="nav-link dropdown-toggle"
@@ -39,6 +42,8 @@
               <router-link class="dropdown-item" to="/me/edit">Edit Profile</router-link>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" @click="logoutUser" style="cursor: pointer">Log Out</a>
+              <div class="dropdown-divider"></div>
+              <router-link class="dropdown-item" to="/about">About this App</router-link>
             </div>
           </li>
         </ul>
@@ -54,10 +59,10 @@ export default {
   },
   methods: {
     logoutUser() {
-      localStorage.removeItem('token');
+      localStorage.removeItem("token");
       window.location.reload();
-    },
-  },
+    }
+  }
 };
 </script>
 
